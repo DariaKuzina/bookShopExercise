@@ -5,6 +5,12 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 
 const routes: Routes = [
   {
+    path: '',
+    redirectTo: '/about',
+    pathMatch: 'full'
+  },
+  {
+
     // The router will match this route if the URL requested
     // doesn't match any paths for routes defined in our configuration
     path: '**',
@@ -13,7 +19,7 @@ const routes: Routes = [
   }
 ];
 
-export let appRouterComponents = [ PageNotFoundComponent ];
+export let appRouterComponents = [PageNotFoundComponent];
 
 @NgModule({
   imports: [

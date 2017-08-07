@@ -1,0 +1,10 @@
+<div *ngIf="!items || items.lenght===0">
+  Your cart is empty!
+</div>
+
+<div *ngIf="items?.lenght>0">
+  <ul>
+    <li *ngFor = "let item of items">{{item.productName}} - {{item.productId}}</li>
+  </ul>
+  <button (click)="clear()">Clear</button>
+</div>

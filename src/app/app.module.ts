@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import { BooksModule } from './books/books.module';
+import { CartModule } from './cart/cart.module';
 
 // add this line if you don't have access to
 // index.html and you want to set base tag
@@ -23,6 +24,7 @@ import { HttpModule, JsonpModule } from '@angular/http';
     BrowserModule,
     FormsModule,
     BooksModule,
+    CartModule,
     HttpModule,
     JsonpModule,
     AppRoutingModule
