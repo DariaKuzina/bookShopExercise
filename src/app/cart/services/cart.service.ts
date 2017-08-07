@@ -14,7 +14,16 @@ export class CartService {
     if (existing == null)
       existing = [];
 
-    existing.push(item);
+    let existingProductIndex = existing.findIndex(it => it.productId === item.productId);
+
+    if (existingProductIndex === -1)
+      existing.push(item);
+    else
+      existing[existingProductIndex] = new CartItem(
+        item.productId,
+        item.productName,
+        existing[existingProductIndex].quantity + item.quantity);
+
     this.store(existing);
     return existing;
   }
@@ -24,7 +33,7 @@ export class CartService {
   }
 
   getCartContent(): CartItem[] {
-   return JSON.parse(localStorage.getItem(this.storageKey));    
+    return JSON.parse(localStorage.getItem(this.storageKey));
   }
 
   store(info: CartItem[]): void {

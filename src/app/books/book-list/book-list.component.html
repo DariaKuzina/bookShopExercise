@@ -1,4 +1,4 @@
-<h2>Here you can by following books:</h2>
+<h2>Here you can buy following books:</h2>
 <div class="panel-body">
-  <book *ngFor='let book of books' [book]="book"></book>
+  <book *ngFor='let book of books' [book]="book" (onAddToCart)="addToCart($event)"></book>
 </div>
