@@ -28,6 +28,23 @@
       "shippingAddress": "test1",
       "customerId": "a1s2d2",
       "id": 2
+    },
+    {
+      "items": [
+        {
+          "productId": 1,
+          "productName": "The Hobbit",
+          "quantity": 2
+        },
+        {
+          "productId": 2,
+          "productName": "Martin Iden",
+          "quantity": 3
+        }
+      ],
+      "shippingAddress": "test",
+      "customerId": "a1s2d2",
+      "id": 3
     }
   ],
   "users": [

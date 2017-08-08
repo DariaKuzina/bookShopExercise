@@ -1,28 +1,42 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Book } from './../../models/book';
-import { MockBooksService } from './../services/mock-books.service';
+import { BooksService } from './../services/books.service';
 import { CartService } from './../../cart/services/cart.service';
 import { CartItem } from './../../models/cartItem';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   templateUrl: './book-list.component.html',
   styleUrls: ['./book-list.component.css']
 })
-export class BookListComponent implements OnInit {
+export class BookListComponent implements OnInit, OnDestroy {
 
-  books : Array<Book>
+  books: Array<Book>;
+  private subscriptions: Subscription[] = [];
   constructor(
-    private bookService : MockBooksService,
-    private cartService : CartService,
-    private router : Router
+    private bookService: BooksService,
+    private cartService: CartService,
+    private router: Router
   ) { }
 
   ngOnInit() {
-    this.books = this.bookService.getProducts();
+
+    const sub = this.bookService.getBooks()
+      .subscribe(
+      books => this.books = books,
+      error => console.log(error)
+      );
+    this.subscriptions.push(sub);
   }
 
-  addToCart(cartItem : CartItem) : void{
+  ngOnDestroy() {
+    if (this.subscriptions) {
+      this.subscriptions.forEach(s => s.unsubscribe());
+    }
+  }
+
+  addToCart(cartItem: CartItem): void {
     this.cartService.add(cartItem);
     this.router.navigate(['/cart']);
   }

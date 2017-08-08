@@ -6,7 +6,7 @@ import { BooksRoutingModule } from './books.routing.module';
 
 import { BookListComponent } from './book-list/book-list.component';
 import { BookComponent } from './book/book.component';
-import { MockBooksService } from './services/mock-books.service'
+import { BooksService } from './services/books.service'
 
 
 @NgModule({
@@ -20,7 +20,7 @@ import { MockBooksService } from './services/mock-books.service'
     BooksRoutingModule
   ],
   providers: [
-    MockBooksService
+    BooksService
   ]
 })
 export class BooksModule {}
