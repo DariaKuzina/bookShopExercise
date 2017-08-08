@@ -6,5 +6,6 @@
   <ul>
     <li *ngFor = "let item of items">{{item.productName}} - {{item.quantity}}</li>
   </ul>
-  <button (click)="clear()">Clear</button>
+  <button class="btn btn-primary btn-sm btn-danger" (click)="clear()">Clear</button>
+  <button class="btn btn-primary btn-sm btn-success" (click)="order()">Order</button>
  </div> 

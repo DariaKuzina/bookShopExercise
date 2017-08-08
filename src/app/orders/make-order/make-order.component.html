@@ -1,0 +1,11 @@
+<h2>Confirm your order:</h2>
+<div>
+    <label>Shipping address:</label>
+    <input  [(ngModel)]="shippingAddress"/>
+    <div *ngIf="orderedItems.length>0">
+        <ul>
+            <li *ngFor="let item of orderedItems">{{item.productName}} - {{item.quantity}}</li>
+        </ul>
+        <button class="btn btn-primary btn-sm btn-success" (click)="confirmOrder()">Order</button>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+<div>
+  <ul>
+    <li>Shipping address: {{order.shippingAddress}}</li>
+    <li>You ordered:
+      <ul>
+        <li *ngFor="let item of order.items">
+          {{item.productName}} - {{item.quantity}}
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>

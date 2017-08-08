@@ -1,0 +1,67 @@
+{
+  "orders": [
+    {
+      "items": [
+        {
+          "productId": 1,
+          "productName": "The Hobbit",
+          "quantity": 1
+        },
+        {
+          "productId": 2,
+          "productName": "Martin Iden",
+          "quantity": 2
+        }
+      ],
+      "shippingAddress": "test",
+      "customerId": "a1s2d2",
+      "id": 1
+    },
+    {
+      "items": [
+        {
+          "productId": 1,
+          "productName": "The Hobbit",
+          "quantity": 5
+        }
+      ],
+      "shippingAddress": "test1",
+      "customerId": "a1s2d2",
+      "id": 2
+    }
+  ],
+  "users": [
+    {
+      "id": "a1s2d2",
+      "firstName": "Anna",
+      "lastName": "Borisova",
+      "login": "anna",
+      "password": "1234"
+    },
+    {
+      "id": "a1a1a1",
+      "firstName": "Ivan",
+      "lastName": "Ivanov",
+      "login": "admin",
+      "password": "1234"
+    }
+  ],
+  "books": [
+    {
+      "id": 1,
+      "name": "The Hobbit",
+      "description": "Adventures of Bilbo Baggins",
+      "price": 32.4,
+      "author": "J.R.R.Tolkien",
+      "genre": "Fantasy"
+    },
+    {
+      "id": 2,
+      "name": "Martin Iden",
+      "description": "One of Jack London's greatest works",
+      "price": 25.5,
+      "author": "J.London",
+      "genre": "Künstlerroman"
+    }
+  ]
+}
