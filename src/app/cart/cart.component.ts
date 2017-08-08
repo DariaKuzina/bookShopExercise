@@ -30,4 +30,7 @@ export class CartComponent implements OnInit {
     return this.cartService.getTotal();
   }
 
+  remove(productId : number){
+    this.items = this.cartService.remove(productId);
+  }
 }

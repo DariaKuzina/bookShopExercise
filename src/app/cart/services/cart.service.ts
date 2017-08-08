@@ -28,6 +28,26 @@ export class CartService {
     this.store(existing);
     return existing;
   }
+
+  remove(productId: number): CartItem[] {
+
+    let existing: CartItem[] = this.getCartContent();
+
+    if (existing == null)
+      existing = [];
+
+    let existingProductIndex = existing.findIndex(it => it.productId === productId);
+
+    if (existingProductIndex === -1)
+      return existing;
+
+    else
+      existing.splice(existingProductIndex, 1);
+
+    this.store(existing);
+    return existing;
+  }
+
   clear(): CartItem[] {
     localStorage.removeItem(this.storageKey);
     return [];
