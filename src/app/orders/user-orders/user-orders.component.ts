@@ -1,7 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Order } from './../../models/order';
 import { ActivatedRoute } from '@angular/router';
-import { OrdersService } from './../../services/orders.service';
+import { OrdersService } from './../services/orders.service';
+import { AuthorizationService } from './../../users/services/authorization.service';
 
 @Component({
   templateUrl: './user-orders.component.html',
@@ -13,29 +14,14 @@ export class UserOrdersComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private orderService: OrdersService
+    private orderService: OrdersService,
+    private authService : AuthorizationService
   ) { }
 
   ngOnInit() {
-    // this.orders = [{
-    //   items: [
-    //     {
-    //       productId: 1,
-    //       productName: "The Hobbit",
-    //       quantity: 1
-    //     },
-    //     {
-    //       productId: 2,
-    //       productName: "Martin Iden",
-    //       quantity: 2
-    //     }
-    //   ],
-    //   shippingAddress: "test",
-    //   customerId: "a1s2d2"
-    // }
-    // ];
 
-    this.orderService.getUsersOrders('a1s2d2')
+    let userId = this.authService.getCurrentUser().id;
+    this.orderService.getUsersOrders(userId)
       .then(orders => this.orders = orders)
       .catch((err) => console.log(err));
   }

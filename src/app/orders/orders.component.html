@@ -1,13 +1,15 @@
-<div>
-  <ul>
-    <li>Shipping address: {{order.shippingAddress}}</li>
-    <li>You ordered:
-      <ul>
-        <li *ngFor="let item of order.items">
-          {{item.productName}} - {{item.quantity}} x {{item.price}}
-        </li>
-      </ul>
-    </li>
-    <li>Total cost: {{order.cost}}</li>
-  </ul>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <ul class="list-unstyled">
+      <li>Shipping address: {{order.shippingAddress}}</li>
+      <li>You ordered:
+        <ol>
+          <li *ngFor="let item of order.items">
+            {{item.productName}} - {{item.quantity}} x {{item.price}}
+          </li>
+        </ol>
+      </li>
+      <li>Total cost: {{order.cost}}</li>
+    </ul>
+  </div>
 </div>

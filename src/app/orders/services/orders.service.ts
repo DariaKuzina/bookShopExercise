@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers, RequestOptions } from '@angular/http';
-import './../rxjs-extensions';
+import './../../rxjs-extensions';
 
-import { Order } from './../models/order';
+import { Order } from './../../models/order';
 
 @Injectable()
 export class OrdersService {

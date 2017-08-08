@@ -41,15 +41,15 @@ export class CartService {
     localStorage.setItem(this.storageKey, JSON.stringify(info));
   }
 
-  getTotal() : number{
+  getTotal(): number {
     return this.getTotalOfProducts(this.getCartContent());
   }
-  
-  getTotalOfProducts(items : Array<CartItem>) : number{
+
+  getTotalOfProducts(items: Array<CartItem>): number {
     let total = 0;
     items.forEach(element => {
-      total+=element.quantity * element.price;
+      total += element.quantity * element.price;
     });
-    return total;
+    return Math.round(total * 100) / 100;
   }
 }

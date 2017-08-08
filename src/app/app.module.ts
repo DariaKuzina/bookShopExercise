@@ -15,6 +15,9 @@ import { AppRoutingModule, appRouterComponents } from './app.routing.module';
 import { AppComponent } from './app.component';
 
 import { HttpModule, JsonpModule } from '@angular/http';
+import { UserService } from './users/services/user.service';
+import { AuthorizationService } from './users/services/authorization.service';
+import { AuthGuard } from './guards/auth.guard';
 
 @NgModule({
   declarations: [
@@ -32,6 +35,9 @@ import { HttpModule, JsonpModule } from '@angular/http';
     AppRoutingModule
   ],
   providers: [
+    UserService,
+    AuthorizationService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })

@@ -2,12 +2,18 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   {
     path: '',
     redirectTo: '/about',
     pathMatch: 'full'
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
+    data: { title: 'Login' }
   },
   {
 
@@ -19,7 +25,7 @@ const routes: Routes = [
   }
 ];
 
-export let appRouterComponents = [PageNotFoundComponent];
+export let appRouterComponents = [PageNotFoundComponent, LoginComponent];
 
 @NgModule({
   imports: [

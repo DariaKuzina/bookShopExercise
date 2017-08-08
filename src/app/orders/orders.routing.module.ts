@@ -3,10 +3,11 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { UserOrdersComponent } from './user-orders/user-orders.component';
 import { MakeOrderComponent } from './make-order/make-order.component'
+import { AuthGuard } from './../guards/auth.guard'
 
 const routes: Routes = [
     {
-        path: 'orders/:id',
+        path: 'orders',
         component: UserOrdersComponent,
         data: {
             title: 'Your orders'
@@ -15,6 +16,7 @@ const routes: Routes = [
     {
         path: 'makeorder',
         component: MakeOrderComponent,
+        canActivate : [AuthGuard],
         data: {
             title: 'Confirm order'
         }
