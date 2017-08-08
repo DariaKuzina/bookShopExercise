@@ -21,6 +21,6 @@ export class BookComponent implements OnInit {
       alert('Enter integer positive number!');
       return;
     }
-    this.onAddToCart.emit(new CartItem(this.book.id, this.book.name, +quantity));
+    this.onAddToCart.emit(new CartItem(this.book.id, this.book.name, +quantity, this.book.price));
   }
 }

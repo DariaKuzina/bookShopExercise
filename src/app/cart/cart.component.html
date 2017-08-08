@@ -2,10 +2,13 @@
   Your cart is empty!
 </div>
 
- <div *ngIf="items.length>0"> 
+<div *ngIf="items.length>0">
   <ul>
-    <li *ngFor = "let item of items">{{item.productName}} - {{item.quantity}}</li>
+    <li *ngFor="let item of items">{{item.productName}} - {{item.quantity}} x {{item.price}}</li>
   </ul>
+  <div>
+    <label>Total:</label> <strong> {{ getTotal() }}</strong>
+  </div>
   <button class="btn btn-primary btn-sm btn-danger" (click)="clear()">Clear</button>
   <button class="btn btn-primary btn-sm btn-success" (click)="order()">Order</button>
- </div> 
+</div>

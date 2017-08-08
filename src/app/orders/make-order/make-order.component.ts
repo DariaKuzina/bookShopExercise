@@ -27,6 +27,11 @@ export class MakeOrderComponent implements OnInit {
   }
 
   confirmOrder(): void {
-    this.ordersService.createOrder(new Order(this.orderedItems, this.shippingAddress, this.customerId));
+    this.ordersService.createOrder(
+      new Order(
+        this.orderedItems,
+        this.shippingAddress,
+        this.customerId,
+        this.cartService.getTotalOfProducts(this.orderedItems)));
   }
 }

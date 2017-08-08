@@ -4,6 +4,7 @@ export class Order {
     constructor(
         public items: Array<CartItem>,
         public shippingAddress: string,
-        public customerId: string
+        public customerId: string,
+        public cost : number
     ) { }
 }

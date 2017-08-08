@@ -22,7 +22,8 @@ export class CartService {
       existing[existingProductIndex] = new CartItem(
         item.productId,
         item.productName,
-        existing[existingProductIndex].quantity + item.quantity);
+        existing[existingProductIndex].quantity + item.quantity,
+        item.price);
 
     this.store(existing);
     return existing;
@@ -38,5 +39,17 @@ export class CartService {
 
   store(info: CartItem[]): void {
     localStorage.setItem(this.storageKey, JSON.stringify(info));
+  }
+
+  getTotal() : number{
+    return this.getTotalOfProducts(this.getCartContent());
+  }
+  
+  getTotalOfProducts(items : Array<CartItem>) : number{
+    let total = 0;
+    items.forEach(element => {
+      total+=element.quantity * element.price;
+    });
+    return total;
   }
 }

@@ -4,9 +4,10 @@
     <li>You ordered:
       <ul>
         <li *ngFor="let item of order.items">
-          {{item.productName}} - {{item.quantity}}
+          {{item.productName}} - {{item.quantity}} x {{item.price}}
         </li>
       </ul>
     </li>
+    <li>Total cost: {{order.cost}}</li>
   </ul>
 </div>

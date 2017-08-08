@@ -26,4 +26,8 @@ export class CartComponent implements OnInit {
     this.router.navigate(['/makeorder'])
   }
 
+  getTotal() : number{
+    return this.cartService.getTotal();
+  }
+
 }
