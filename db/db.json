@@ -109,15 +109,47 @@
     {
       "items": [
         {
+          "productId": 4,
+          "productName": "The Grapes of Wrath",
+          "quantity": 1,
+          "price": "19.8"
+        }
+      ],
+      "customerId": "a1a1a1",
+      "cost": 19.8,
+      "id": 9
+    },
+    {
+      "items": [
+        {
           "productId": 1,
           "productName": "The Hobbit",
           "quantity": 1,
           "price": 32.4
+        },
+        {
+          "productId": 2,
+          "productName": "Martin Eden",
+          "quantity": 1,
+          "price": 25.5
+        },
+        {
+          "productId": 3,
+          "productName": "For whom the bell tolls",
+          "quantity": 1,
+          "price": 30.5
+        },
+        {
+          "productId": 4,
+          "productName": "The Grapes of Wrath",
+          "quantity": 1,
+          "price": "23.8"
         }
       ],
+      "shippingAddress": "there",
       "customerId": "a1a1a1",
-      "cost": 32.4,
-      "id": 9
+      "cost": 112.2,
+      "id": 10
     }
   ],
   "users": [
@@ -142,18 +174,50 @@
     {
       "id": 1,
       "name": "The Hobbit",
-      "description": "Adventures of Bilbo Baggins",
+      "description": "The quest of home-loving hobbit Bilbo Baggins to win a share of the treasure guarded by Smaug the dragon",
       "price": 32.4,
       "author": "J.R.R.Tolkien",
       "genre": "Fantasy"
     },
     {
       "id": 2,
-      "name": "Martin Iden",
-      "description": "One of Jack London's greatest works",
+      "name": "Martin Eden",
+      "description": "Young proletarian autodidact struggling to become a writer",
       "price": 25.5,
       "author": "J.London",
       "genre": "Künstlerroman"
+    },
+    {
+      "id": 3,
+      "name": "For whom the bell tolls",
+      "description": "The story of Robert Jordan during the Spanish Civil War",
+      "price": 30.5,
+      "author": "E. Hemingway",
+      "genre": "War novel"
+    },
+    {
+      "id": 6,
+      "name": "The Two Captains",
+      "description": "The story of a Russian youth, Alexander Grigoryev, as he grows up through Czarist Russia to the October Revolution to World War II",
+      "price": "30",
+      "author": "V. Kaverin",
+      "genre": "Bildungsroman"
+    },
+    {
+      "id": 7,
+      "name": ",hj",
+      "description": null,
+      "price": null,
+      "author": "gjfhn",
+      "genre": ",hj,"
+    },
+    {
+      "id": 8,
+      "name": "fgn",
+      "description": "dfn",
+      "price": "65",
+      "author": "dfnh",
+      "genre": "dfn"
     }
   ]
 }

@@ -15,8 +15,8 @@ export class HandleOrdersComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private orderService: OrdersService,
-    private authService : AuthorizationService
-  ) { }
+    private authService: AuthorizationService
+  ) {  }
 
   ngOnInit() {
 

@@ -1,3 +1,8 @@
-<p>
-  handle-books works!
-</p>
+<h2>Books in store:</h2>
+<button class="btn" (click)="create()">Add new book</button>
+<div class="panel-body">
+  <ul class="list-nostyle scrollable">
+   <book *ngFor='let book of books' [book]="book" (onDelete)="delete($event)"> </book>
+  </ul>
+</div>
+<router-outlet></router-outlet>

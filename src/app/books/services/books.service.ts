@@ -20,8 +20,44 @@ export class BooksService {
             .catch(this.handleError);
     }
 
-    getBook(id : number): Observable<Book> {
+    getBook(id: number): Observable<Book> {
         return this.http.get(`${this.booksUrl}/${id}`)
+            .map(this.handleData)
+            .catch(this.handleError);
+    }
+
+    updateBook(book: Book): Observable<Book> {
+
+        const url = `${this.booksUrl}/${book.id}`,
+            body = JSON.stringify(book),
+            headers = new Headers({ 'Content-Type': 'application/json' }),
+            options = new RequestOptions();
+
+        options.headers = headers;
+
+        return this.http.put(url, body, options)
+            .map(this.handleData)
+            .catch(this.handleError);
+    }
+
+    createBook(book: Book): Observable<Book> {
+        const url = this.booksUrl,
+            body = JSON.stringify(book),
+            headers = new Headers({ 'Content-Type': 'application/json' }),
+            options = new RequestOptions();
+
+        options.headers = headers;
+
+        return this.http.post(url, body, options)
+            .map(this.handleData)
+            .catch(this.handleError);
+    }
+
+    deleteBook(bookId: number): Observable<Book> {
+
+        const url = `${this.booksUrl}/${bookId}`;
+
+        return this.http.delete(url)
             .map(this.handleData)
             .catch(this.handleError);
     }
