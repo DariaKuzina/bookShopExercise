@@ -18,7 +18,9 @@ import { HttpModule, JsonpModule } from '@angular/http';
 import { UserService } from './users/services/user.service';
 import { AuthorizationService } from './users/services/authorization.service';
 import { AuthGuard } from './guards/auth.guard';
+import { AdminGuard } from './guards/admin.guard';
 import { AboutComponent } from './components/about/about.component';
+import { AdminModule } from './admin/admin.module';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,7 @@ import { AboutComponent } from './components/about/about.component';
     BooksModule,
     CartModule,
     OrdersModule,
+    AdminModule,
     HttpModule,
     JsonpModule,
     AppRoutingModule
@@ -39,7 +42,8 @@ import { AboutComponent } from './components/about/about.component';
   providers: [
     UserService,
     AuthorizationService,
-    AuthGuard
+    AuthGuard,
+    AdminGuard
   ],
   bootstrap: [AppComponent]
 })

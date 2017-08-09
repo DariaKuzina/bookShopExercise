@@ -18,11 +18,19 @@ export class UserService {
       .then(response => <User[]>response.json())
       .catch(this.handleError);
   }
-  
-  getUserByLogPass(login: string, password : string) : Promise<User>{
+
+  getUserByLogPass(login: string, password: string): Promise<User> {
     return this.http.get(`${this.usersUrl}?login=${login}&&password=${password}`)
       .toPromise()
       .then(response => (<User[]>response.json())[0])
+      .catch(this.handleError);
+  }
+
+  getAdmins(): Promise<User> {
+
+    return this.http.get(`${this.usersUrl}?isAdmin=true`)
+      .toPromise()
+      .then(response => <User[]>response.json())
       .catch(this.handleError);
   }
 

@@ -113,14 +113,16 @@
       "firstName": "Anna",
       "lastName": "Borisova",
       "login": "anna",
-      "password": "1234"
+      "password": "1234",
+	  "isAdmin" : false
     },
     {
       "id": "a1a1a1",
       "firstName": "Ivan",
       "lastName": "Ivanov",
       "login": "admin",
-      "password": "1234"
+      "password": "1234",
+	  "isAdmin" : true
     }
   ],
   "books": [

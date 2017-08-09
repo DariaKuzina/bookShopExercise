@@ -9,13 +9,18 @@ import { AuthorizationService } from './users/services/authorization.service';
 export class AppComponent {
   title = 'app';
   constructor(
-    private authService : AuthorizationService
-  ){ }
+    private authService: AuthorizationService
+  ) { }
 
-  isLogged() : boolean{
+  isLogged(): boolean {
     return this.authService.isLogged();
   }
-  logout() : void{
+
+  isAdmin(): boolean {
+    return this.authService.isAdmin();
+  }
+
+  logout(): void {
     this.authService.logout();
   }
 }

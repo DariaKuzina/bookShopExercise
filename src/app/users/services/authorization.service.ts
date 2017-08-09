@@ -35,6 +35,11 @@ export class AuthorizationService {
     return localStorage.getItem(this.storageKey) !== null;
   }
 
+  isAdmin(): boolean {
+    var user = this.getCurrentUser();
+    return user && user.isAdmin;
+  }
+
   private tryLog(user: User): void {
     if (user) {
       localStorage.setItem(this.storageKey, JSON.stringify(user));
