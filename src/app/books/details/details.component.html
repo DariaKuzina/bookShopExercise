@@ -1,0 +1,11 @@
+<div *ngIf="book">
+    <ul class="list-unstyled">
+        <li><label>Id:</label> {{book.id}}</li>
+        <li><label>Author:</label> {{book.author}}</li>
+        <li><label>Name:</label> {{book.name}}</li>
+         <li><label>Genre:</label> {{book.genre}}</li>
+        <li><label>Description:</label> {{book.description}}</li>
+        <li><label>Price:</label> {{book.price}}</li>
+        <button class="btn btn-primary btn-sm" (click)="goBack()">Back</button>
+    </ul>    
+</div>

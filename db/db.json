@@ -85,6 +85,26 @@
       "customerId": "a1a1a1",
       "cost": 32.4,
       "id": 7
+    },
+    {
+      "items": [
+        {
+          "productId": 2,
+          "productName": "Martin Iden",
+          "quantity": 2,
+          "price": 25.5
+        },
+        {
+          "productId": 1,
+          "productName": "The Hobbit",
+          "quantity": 1,
+          "price": 32.4
+        }
+      ],
+      "shippingAddress": "here",
+      "customerId": "a1a1a1",
+      "cost": 83.4,
+      "id": 8
     }
   ],
   "users": [

@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Book } from './../../models/book';
 import { CartItem } from './../../models/cartItem';
+import { Router, ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'book',
@@ -11,7 +12,10 @@ export class BookComponent implements OnInit {
 
   @Input() book: Book;
   @Output() onAddToCart = new EventEmitter<CartItem>();
-  constructor() { }
+  constructor(
+    private router : Router,
+    private route : ActivatedRoute
+  ) { }
 
   ngOnInit() {
   }
@@ -22,5 +26,9 @@ export class BookComponent implements OnInit {
       return;
     }
     this.onAddToCart.emit(new CartItem(this.book.id, this.book.name, +quantity, this.book.price));
+  }
+
+  viewDetails() : void{
+    this.router.navigate([`details/${this.book.id}`], { relativeTo : this.route});
   }
 }

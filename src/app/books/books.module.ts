@@ -6,13 +6,15 @@ import { BooksRoutingModule } from './books.routing.module';
 
 import { BookListComponent } from './book-list/book-list.component';
 import { BookComponent } from './book/book.component';
-import { BooksService } from './services/books.service'
+import { BooksService } from './services/books.service';
+import { DetailsComponent } from './details/details.component'
 
 
 @NgModule({
   declarations: [
     BookListComponent,
-    BookComponent
+    BookComponent,
+    DetailsComponent
   ],
   imports: [
     CommonModule,

@@ -20,6 +20,12 @@ export class BooksService {
             .catch(this.handleError);
     }
 
+    getBook(id : number): Observable<Book> {
+        return this.http.get(`${this.booksUrl}/${id}`)
+            .map(this.handleData)
+            .catch(this.handleError);
+    }
+
     private handleData(response: Response) {
         const body = response.json();
         return body || {};
