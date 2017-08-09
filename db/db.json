@@ -105,6 +105,19 @@
       "customerId": "a1a1a1",
       "cost": 83.4,
       "id": 8
+    },
+    {
+      "items": [
+        {
+          "productId": 1,
+          "productName": "The Hobbit",
+          "quantity": 1,
+          "price": 32.4
+        }
+      ],
+      "customerId": "a1a1a1",
+      "cost": 32.4,
+      "id": 9
     }
   ],
   "users": [
@@ -114,7 +127,7 @@
       "lastName": "Borisova",
       "login": "anna",
       "password": "1234",
-	  "isAdmin" : false
+      "isAdmin": false
     },
     {
       "id": "a1a1a1",
@@ -122,7 +135,7 @@
       "lastName": "Ivanov",
       "login": "admin",
       "password": "1234",
-	  "isAdmin" : true
+      "isAdmin": true
     }
   ],
   "books": [

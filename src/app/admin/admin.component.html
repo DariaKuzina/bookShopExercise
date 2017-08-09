@@ -1,0 +1,21 @@
+<h3>Admin panel</h3>
+<nav>
+  <ul class="nav nav-tabs">
+    <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+      <a routerLink="./"
+         queryParamsHandling="preserve"
+         preserveFragment>Dashboard</a>
+    </li>
+    <li routerLinkActive="active">
+      <a routerLink="./books"
+         queryParamsHandling="preserve"
+         preserveFragment>Manage books</a>
+    </li>
+    <li routerLinkActive="active">
+      <a routerLink="./orders"
+         queryParamsHandling="preserve"
+         preserveFragment>View all orders</a>
+    </li>
+  </ul>
+</nav>
+<router-outlet></router-outlet>

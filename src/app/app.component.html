@@ -18,7 +18,7 @@
           <li routerLinkActive="active">
             <a routerLink="/books">Books</a>
           </li>
-          <li routerLinkActive="active">
+          <li *ngIf="isUser()" routerLinkActive="active">
             <a routerLink="/cart">Cart</a>
           </li>
           <li routerLinkActive="active">
