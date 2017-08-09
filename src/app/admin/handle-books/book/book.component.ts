@@ -10,6 +10,7 @@ import { Router, ActivatedRoute} from '@angular/router';
 export class BookComponent implements OnInit {
 
   @Output() onDelete = new EventEmitter<number>();
+  @Output() onEdit = new EventEmitter<Book>();
   @Input() book: Book;
   constructor(
     private router : Router,
@@ -19,11 +20,11 @@ export class BookComponent implements OnInit {
   ngOnInit() {
   }
 
-  edit() : void{
-   this.router.navigate([`./edit/${this.book.id}`], { relativeTo : this.route});
+  edit() : void {
+   this.onEdit.emit(this.book);
   }
 
-  delete() : void{
+  delete() : void {
     this.onDelete.emit(this.book.id);
   }
 }

@@ -205,19 +205,35 @@
     },
     {
       "id": 7,
-      "name": ",hj",
+      "name": "name",
       "description": null,
       "price": null,
-      "author": "gjfhn",
-      "genre": ",hj,"
+      "author": "author",
+      "genre": "genre"
     },
     {
       "id": 8,
-      "name": "fgn",
-      "description": "dfn",
-      "price": "65",
-      "author": "dfnh",
-      "genre": "dfn"
+      "name": "War and Peace",
+      "description": null,
+      "price": "20",
+      "author": "l. Tolstoy",
+      "genre": "Novel"
+    },
+    {
+      "id": 9,
+      "name": null,
+      "description": null,
+      "price": null,
+      "author": "a",
+      "genre": null
+    },
+    {
+      "id": 11,
+      "name": null,
+      "description": null,
+      "price": "10",
+      "author": "author",
+      "genre": "genre"
     }
   ]
 }

@@ -1,8 +1,9 @@
 <h2>Books in store:</h2>
-<button class="btn" (click)="create()">Add new book</button>
+<!-- <button class="btn" (click)="create()">Add new book</button> -->
 <div class="panel-body">
   <ul class="list-nostyle scrollable">
-   <book *ngFor='let book of books' [book]="book" (onDelete)="delete($event)"> </book>
+   <book *ngFor='let book of books' [book]="book" (onDelete)="delete($event)" (onEdit)="select($event)"> </book>
   </ul>
 </div>
-<router-outlet></router-outlet>
+<edit-book *ngIf="editedBook?.id" [book]="editedBook" (onEdit)="edit($event)" ></edit-book>
+<edit-book *ngIf="!editedBook || !editedBook.id" [book]="editedBook" (onCreate)="create($event)" ></edit-book>

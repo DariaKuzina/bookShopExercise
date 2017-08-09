@@ -11,6 +11,8 @@ import { BooksService } from './../../../books/services/books.service';
 export class EditBookComponent implements OnInit {
 
   @Input() book: Book;
+  @Output() onCreate = new EventEmitter<Book>();
+  @Output() onEdit = new EventEmitter<Book>();
   private id: number;
   constructor(
     private router: Router,
@@ -20,43 +22,22 @@ export class EditBookComponent implements OnInit {
 
   ngOnInit() {
 
-    this.book = new Book(null, null, null, null, null, null);
+    this.route.params.subscribe((params: Params) => this.id = +params['id']);
+    if (isNaN(this.id))
+      return;
 
-    this.route.params
-      .switchMap((params: Params) => {
-        return params['id']
-          ? this.bookService.getBook(+params['id'])
-          : null;
-      })
+    this.bookService.getBook(this.id)
       .subscribe(
       book => this.book = book,
       err => console.log(err)
       );
-  }
-
-  edit(): void {
-
-    if (this.book.id)
-      this.update();
-    else
-      this.create();
-
-    this.router.navigate(['/admin/books']);
   }
 
   update(): void {
-    this.bookService.updateBook(this.book)
-      .subscribe(
-      book => this.book = book,
-      err => console.log(err)
-      );
+    this.onEdit.emit(this.book);
   }
 
   create(): void {
-    this.bookService.createBook(this.book)
-      .subscribe(
-      book => this.book = book,
-      err => console.log(err)
-      );
+    this.onCreate.emit(this.book);
   }
 }

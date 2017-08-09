@@ -11,12 +11,14 @@ import { Subscription } from 'rxjs/Subscription';
 export class HandleBooksComponent implements OnInit, OnDestroy {
 
   books: Array<Book>;
-  private subscriptions: Subscription[] = [];
+  editedBook: Book;
+  private subscription: Subscription;
   constructor(
     private bookService: BooksService,
     private router: Router,
     private route: ActivatedRoute
-  ) {  }
+  ) {
+  }
 
   ngOnInit() {
 
@@ -24,13 +26,13 @@ export class HandleBooksComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    if (this.subscriptions) {
-      this.subscriptions.forEach(s => s.unsubscribe());
+    if (this.subscription) {
+      this.subscription.unsubscribe();
     }
   }
 
-  create(): void {
-    this.router.navigate(['./create'], { relativeTo: this.route });
+  select(book: Book) {
+    this.editedBook = book;
   }
 
   delete(id: number): void {
@@ -40,12 +42,34 @@ export class HandleBooksComponent implements OnInit, OnDestroy {
       err => console.log(err)
       );
   }
+
+  edit(book: Book): void {
+
+    this.bookService.updateBook(book)
+      .subscribe(
+      book => this.books[this.books.findIndex(x => x.id == book.id)] = book,
+      err => console.log(err)
+      );
+
+   this.editedBook = new Book(null, null, null, null, null, null);
+  }
+
+  create(book: Book): void {
+
+    this.bookService.createBook(book)
+      .subscribe(
+      book => this.books.push(book),
+      err => console.log(err)
+      );
+  }
+
   private update(): void {
-    const sub = this.bookService.getBooks()
+
+    this.editedBook = new Book(null, null, null, null, null, null);
+    this.subscription = this.bookService.getBooks()
       .subscribe(
       books => this.books = books,
       error => console.log(error)
       );
-    this.subscriptions.push(sub);
   }
 }
