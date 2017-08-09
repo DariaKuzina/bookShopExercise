@@ -1,11 +1,14 @@
-<h2>Confirm your order:</h2>
-<div>
-    <label>Shipping address:</label>
-    <input  [(ngModel)]="shippingAddress"/>
-    <div *ngIf="orderedItems.length>0">
+<div *ngIf="orderedItems?.length>0">
+    <h2>Confirm your order:</h2>
+    <div>
+        <label>Shipping address:</label>
+        <input [(ngModel)]="shippingAddress" />
         <ul>
             <li *ngFor="let item of orderedItems">{{item.productName}} - {{item.quantity}}</li>
         </ul>
         <button class="btn btn-primary btn-sm btn-success" (click)="confirmOrder()">Order</button>
     </div>
+</div>
+<div *ngIf="!orderedItems || orderedItems?.length===0">
+    <p>Your cart is emty, nothing to confirm.</p>
 </div>

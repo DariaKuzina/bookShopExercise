@@ -18,11 +18,13 @@ import { HttpModule, JsonpModule } from '@angular/http';
 import { UserService } from './users/services/user.service';
 import { AuthorizationService } from './users/services/authorization.service';
 import { AuthGuard } from './guards/auth.guard';
+import { AboutComponent } from './components/about/about.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    appRouterComponents
+    appRouterComponents,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

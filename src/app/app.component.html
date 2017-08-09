@@ -22,13 +22,21 @@
           <li routerLinkActive="active">
             <a routerLink="/admin">Admin</a>
           </li>
-
-          <li routerLinkActive="active">
-            <a routerLink="/login">Login</a>
-          </li>
-          
           <li routerLinkActive="active">
             <a routerLink="/cart">Cart</a>
+          </li>
+          <li routerLinkActive="active">
+            <a routerLink="/orders">Orders</a>
+          </li>
+        </ul>
+      </div>
+      <div >
+        <ul class="nav navbar-nav navbar-right">
+          <li *ngIf="!isLogged()" routerLinkActive="active">
+            <a routerLink="/login">Login</a>
+          </li>
+          <li *ngIf="isLogged()" role="button">
+            <a (click)="logout()">Logout</a>
           </li>
         </ul>
       </div>

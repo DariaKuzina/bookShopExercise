@@ -24,6 +24,7 @@ export class AuthorizationService {
   logout() {
     // remove user from local storage to log user out
     localStorage.removeItem(this.storageKey);
+    this.route.navigate(['/about']);
   }
 
   getCurrentUser(): User {
@@ -41,6 +42,9 @@ export class AuthorizationService {
     if (this.redirectUrl) {
       this.route.navigate([this.redirectUrl]);
       this.redirectUrl = null;
+    }
+    else {
+      this.route.navigate(['/orders']);
     }
   }
 

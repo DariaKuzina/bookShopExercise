@@ -9,6 +9,7 @@ const routes: Routes = [
     {
         path: 'orders',
         component: UserOrdersComponent,
+        canActivate: [AuthGuard],
         data: {
             title: 'Your orders'
         }
@@ -16,11 +17,11 @@ const routes: Routes = [
     {
         path: 'makeorder',
         component: MakeOrderComponent,
-        canActivate : [AuthGuard],
+        canActivate: [AuthGuard],
         data: {
             title: 'Confirm order'
         }
-    },
+    }
 ];
 
 @NgModule({

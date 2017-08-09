@@ -38,7 +38,7 @@ export class MakeOrderComponent implements OnInit {
         this.cartService.getTotalOfProducts(this.orderedItems)))
       .then(r => {
         this.cartService.clear();
-        this.router.navigate([`/orders/${this.customerId}`]);
+        this.router.navigate([`/orders`]);
       })
       .catch(error => console.log(error));
 

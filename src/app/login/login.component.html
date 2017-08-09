@@ -3,5 +3,4 @@
   <label for="loginInput">Login:</label><input id="loginInput" #loginInp>
   <label for="passwordInput">Password:</label><input id="passwordInput" #passwordInp>
   <button *ngIf="!authService.isLogged()" (click)="login(loginInp.value, passwordInp.value)">Login</button>
-  <button *ngIf="authService.isLogged()" (click)="logout()">Logout</button>
 </p>

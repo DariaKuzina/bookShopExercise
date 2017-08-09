@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthorizationService } from './users/services/authorization.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  constructor(
+    private authService : AuthorizationService
+  ){ }
+
+  isLogged() : boolean{
+    return this.authService.isLogged();
+  }
+  logout() : void{
+    this.authService.logout();
+  }
 }
