@@ -2,8 +2,8 @@
     <ul class="list-inline">
         <li><label>Id:</label> {{book.id}}</li>
         <li><label>Author:</label> {{book.author}}</li>
-        <li><label>Name:</label> {{book.name}}</li>
-        <li><label>Price:</label> {{book.price}}</li>
+        <li><label>Name:</label> {{book.name | titlecase}}</li>
+        <li><label>Price:</label>{{book.price | currency:'USD':true}} ({{book.price | convert:0.853989 | currency:'EUR':true}})</li>
         
         <label>Quantity:</label> <input #quantity type="number" value="1" class="form-group">
         <button class="btn btn-primary btn-sm btn-success" (click)="addToCart(quantity.value)">Add to cart</button>

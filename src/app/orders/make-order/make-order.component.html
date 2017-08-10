@@ -4,7 +4,7 @@
         <label>Shipping address:</label>
         <input [(ngModel)]="shippingAddress" />
         <ul>
-            <li *ngFor="let item of orderedItems">{{item.productName}} - {{item.quantity}}</li>
+            <li *ngFor="let item of orderedItems">{{item.productName | titlecase }} - {{item.quantity}}</li>
         </ul>
         <button class="btn btn-primary btn-sm btn-success" (click)="confirmOrder()">Order</button>
     </div>

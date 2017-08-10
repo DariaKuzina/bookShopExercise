@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { ConverterPipeModule } from './../pipes/converter.module';
 
 import { BooksRoutingModule } from './books.routing.module';
 
@@ -19,6 +20,7 @@ import { DetailsComponent } from './details/details.component'
   imports: [
     CommonModule,
     FormsModule,
+    ConverterPipeModule,
     BooksRoutingModule
   ],
   providers: [

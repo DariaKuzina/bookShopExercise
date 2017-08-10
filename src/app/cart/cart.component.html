@@ -5,7 +5,7 @@
 <div *ngIf="items?.length>0">
   <ul>
     <li *ngFor="let item of items">
-      {{item.productName}} - {{item.quantity}} x {{item.price}}
+      {{item.productName | titlecase}} - {{item.quantity}} x {{item.price | currency:'USD':true}}
        <button class="btn btn-primary btn-xs btn-danger" (click)="remove(item.productId)">X</button>
     </li>
   </ul>

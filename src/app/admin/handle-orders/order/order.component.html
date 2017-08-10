@@ -6,7 +6,7 @@
       <li>Order contains:
         <ol>
           <li *ngFor="let item of order.items">
-            {{item.productName}} - {{item.quantity}} x {{item.price}}
+            {{item.productName | titlecase}} - {{item.quantity}} x {{item.price | currency:'USD':true}}
           </li>
         </ol>
       </li>

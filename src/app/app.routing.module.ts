@@ -23,6 +23,10 @@ const routes: Routes = [
     data: { title: 'Login' }
   },
   {
+    path: 'admin',
+    loadChildren: 'app/admin/admin.module#AdminModule'
+  },
+  {
 
     // The router will match this route if the URL requested
     // doesn't match any paths for routes defined in our configuration
